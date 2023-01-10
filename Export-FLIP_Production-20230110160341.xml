@@ -1,0 +1,2235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26" zv="IRIS for Windows (x86-64) 2022.1 (Build 209U)" ts="2023-01-10 16:06:01">
+<Project name="EnsExportProduction_2023-01-10 16-03-20_821+0" LastModified="2023-01-10 16:06:01.0499676">
+  <ProjectDescription>Studio Project generated from Production 'FLIP.Production' at 2023-01-10 16:03:20.821 UTC</ProjectDescription>
+  <Items>
+    <ProjectItem name="FLIP.Classes.Document" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Classes.Images" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Classes.Patient" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Classes.UtilityMethods" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Documents.Process.HistoricDataIngestion" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Documents.Process.MDMProcessor" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Documents.Service.InvokeHistoricIngestion" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Imaging.Process.HistoricDataIngestion" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Imaging.Process.RealtimeDataIngestion" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Imaging.Service.InvokeHistoricIngestion" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Operation.ExecuteQuery" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Operation.SendToFLIP" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Process.FHIRConvertor" type="CLS"></ProjectItem>
+    <ProjectItem name="FLIP.Production" type="CLS"></ProjectItem>
+    <ProjectItem name="2.4FLIP.HL7" type="HL7"></ProjectItem>
+    <ProjectItem name="FLIP.Configuration.LUT" type="LUT"></ProjectItem>
+    <ProjectItem name="FLIP.Tables.Laterality.LUT" type="LUT"></ProjectItem>
+    <ProjectItem name="FLIP.Tables.Modality.LUT" type="LUT"></ProjectItem>
+    <ProjectItem name="FLIP.Tables.SopClass.LUT" type="LUT"></ProjectItem>
+    <ProjectItem name="EnsExportNotes.EnsExportProduction_2023-01-10 16-03-20_821+0.PTD" type="PTD"></ProjectItem>
+  </Items>
+</Project>
+
+
+<Class name="FLIP.Classes.Document">
+<Super>Ens.Request</Super>
+<TimeChanged>66484,56286.2776064</TimeChanged>
+<TimeCreated>66358,44203.1635877</TimeCreated>
+
+<Property name="Patient">
+<Type>FLIP.Classes.Patient</Type>
+</Property>
+
+<Property name="ID">
+<Type>%String</Type>
+</Property>
+
+<Property name="TypeID">
+<Type>%String</Type>
+</Property>
+
+<Property name="TypeName">
+<Type>%String</Type>
+</Property>
+
+<Property name="CategoryID">
+<Type>%String</Type>
+</Property>
+
+<Property name="CategoryName">
+<Type>%String</Type>
+</Property>
+
+<Property name="ContentType">
+<Type>%String</Type>
+</Property>
+
+<Property name="FileExt">
+<Type>%String</Type>
+</Property>
+
+<Property name="Status">
+<Type>%String</Type>
+</Property>
+
+<Property name="DocumentDate">
+<Type>%String</Type>
+</Property>
+
+<Property name="FileSize">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="FileName">
+<Type>%String</Type>
+</Property>
+
+<Property name="TextBlock">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="50000"/>
+</Property>
+
+<Property name="ContentRef">
+<Type>%String</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DefaultData>DocumentDefaultData</DefaultData>
+<Data name="DocumentDefaultData">
+<Subscript>"Document"</Subscript>
+<Value name="1">
+<Value>Patient</Value>
+</Value>
+<Value name="2">
+<Value>DocumentID</Value>
+</Value>
+<Value name="3">
+<Value>DocumentStatus</Value>
+</Value>
+<Value name="4">
+<Value>DocumentType</Value>
+</Value>
+<Value name="5">
+<Value>DocumentDateTime</Value>
+</Value>
+<Value name="6">
+<Value>TextBlock</Value>
+</Value>
+<Value name="7">
+<Value>FileName</Value>
+</Value>
+<Value name="8">
+<Value>ID</Value>
+</Value>
+<Value name="9">
+<Value>TypeID</Value>
+</Value>
+<Value name="10">
+<Value>TypeName</Value>
+</Value>
+<Value name="11">
+<Value>TypeSystem</Value>
+</Value>
+<Value name="12">
+<Value>CategoryID</Value>
+</Value>
+<Value name="13">
+<Value>CategoryDesc</Value>
+</Value>
+<Value name="14">
+<Value>ContentType</Value>
+</Value>
+<Value name="15">
+<Value>FileExt</Value>
+</Value>
+<Value name="16">
+<Value>Status</Value>
+</Value>
+<Value name="17">
+<Value>obsdttm</Value>
+</Value>
+<Value name="18">
+<Value>ContentRef</Value>
+</Value>
+<Value name="19">
+<Value>Notes</Value>
+</Value>
+<Value name="20">
+<Value>CategoryName</Value>
+</Value>
+<Value name="21">
+<Value>base64</Value>
+</Value>
+<Value name="22">
+<Value>documentdate</Value>
+</Value>
+<Value name="23">
+<Value>fileSize</Value>
+</Value>
+<Value name="24">
+<Value>fileName</Value>
+</Value>
+<Value name="25">
+<Value>DocumentDate</Value>
+</Value>
+<Value name="26">
+<Value>FileSize</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="FLIP.Classes.Images">
+<Super>Ens.Request</Super>
+<TimeChanged>66423,44180.137981</TimeChanged>
+<TimeCreated>66358,43993.9980734</TimeCreated>
+
+<Property name="fillerID">
+<Type>%String</Type>
+</Property>
+
+<Property name="accessionID">
+<Type>%String</Type>
+</Property>
+
+<Property name="procedureName">
+<Type>%String</Type>
+</Property>
+
+<Property name="procedureCode">
+<Type>%String</Type>
+</Property>
+
+<Property name="modalityCode">
+<Type>%String</Type>
+</Property>
+
+<Property name="sopclassUID">
+<Type>%String</Type>
+</Property>
+
+<Property name="seriesUID">
+<Type>%String</Type>
+</Property>
+
+<Property name="instanceUID">
+<Type>%String</Type>
+</Property>
+
+<Property name="bodysiteCode">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="laterality">
+<Type>%String</Type>
+</Property>
+
+<Property name="peformedBy">
+<Type>%String</Type>
+</Property>
+
+<Property name="dateOfStudy">
+<Type>%String</Type>
+</Property>
+
+<Property name="obsdttm">
+<Type>%String</Type>
+</Property>
+
+<Property name="observationValue">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="100"/>
+</Property>
+
+<Property name="Patient">
+<Type>FLIP.Classes.Patient</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DefaultData>ImagesDefaultData</DefaultData>
+<Data name="ImagesDefaultData">
+<Subscript>"Images"</Subscript>
+<Value name="1">
+<Value>Patient</Value>
+</Value>
+<Value name="2">
+<Value>obsdttm</Value>
+</Value>
+<Value name="3">
+<Value>fillerID</Value>
+</Value>
+<Value name="4">
+<Value>accessionID</Value>
+</Value>
+<Value name="5">
+<Value>serviceID</Value>
+</Value>
+<Value name="6">
+<Value>serviceName</Value>
+</Value>
+<Value name="7">
+<Value>serviceIDType</Value>
+</Value>
+<Value name="8">
+<Value>diagService</Value>
+</Value>
+<Value name="9">
+<Value>diagServiceID</Value>
+</Value>
+<Value name="10">
+<Value>resValue</Value>
+</Value>
+<Value name="11">
+<Value>resStatus</Value>
+</Value>
+<Value name="12">
+<Value>device</Value>
+</Value>
+<Value name="13">
+<Value>recStatus</Value>
+</Value>
+<Value name="14">
+<Value>recUpdated</Value>
+</Value>
+<Value name="15">
+<Value>recInserted</Value>
+</Value>
+<Value name="16">
+<Value>procedureName</Value>
+</Value>
+<Value name="17">
+<Value>procedureCode</Value>
+</Value>
+<Value name="18">
+<Value>modalityName</Value>
+</Value>
+<Value name="19">
+<Value>modalityCode</Value>
+</Value>
+<Value name="20">
+<Value>peformedBy</Value>
+</Value>
+<Value name="21">
+<Value>dateOfStudy</Value>
+</Value>
+<Value name="22">
+<Value>sopclassUID</Value>
+</Value>
+<Value name="23">
+<Value>sopclassName</Value>
+</Value>
+<Value name="24">
+<Value>observationValue</Value>
+</Value>
+<Value name="25">
+<Value>bodysiteCode</Value>
+</Value>
+<Value name="26">
+<Value>bodySiteName</Value>
+</Value>
+<Value name="27">
+<Value>laterality</Value>
+</Value>
+<Value name="28">
+<Value>seriesUID</Value>
+</Value>
+<Value name="29">
+<Value>instanceUID</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="FLIP.Classes.Patient">
+<Super>Ens.Request</Super>
+<TimeChanged>66417,51249.4300369</TimeChanged>
+<TimeCreated>66354,36870.3901208</TimeCreated>
+
+<Property name="mrn">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="10"/>
+</Property>
+
+<Property name="nhs">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="10"/>
+</Property>
+
+<Property name="postCode">
+<Type>%String</Type>
+</Property>
+
+<Property name="dob">
+<Type>%String</Type>
+</Property>
+
+<Property name="sex">
+<Type>%String</Type>
+</Property>
+
+<Property name="dod">
+<Type>%String</Type>
+</Property>
+
+<Property name="ethnicGroup">
+<Type>%String</Type>
+</Property>
+
+<Property name="nhsTraced">
+<Type>%Integer</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DefaultData>PatientDefaultData</DefaultData>
+<Data name="PatientDefaultData">
+<Subscript>"Patient"</Subscript>
+<Value name="1">
+<Value>mrn</Value>
+</Value>
+<Value name="2">
+<Value>nhs</Value>
+</Value>
+<Value name="3">
+<Value>postCode</Value>
+</Value>
+<Value name="4">
+<Value>patDOB</Value>
+</Value>
+<Value name="5">
+<Value>sex</Value>
+</Value>
+<Value name="6">
+<Value>patDod</Value>
+</Value>
+<Value name="7">
+<Value>ethnicGroup</Value>
+</Value>
+<Value name="8">
+<Value>dob</Value>
+</Value>
+<Value name="9">
+<Value>dod</Value>
+</Value>
+<Value name="10">
+<Value>nhsTraced</Value>
+</Value>
+<Value name="11">
+<Value>nhsOptOut</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="FLIP.Classes.UtilityMethods">
+<Super>%RegisteredObject</Super>
+<TimeChanged>66443,57736.4542982</TimeChanged>
+<TimeCreated>66437,48965.2258687</TimeCreated>
+
+<Method name="DecodeBase64">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>base64:%Stream.FileBinary,directory:%String,documentID:%String,*fullFilePath:%String</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	
+	set directory=directory_"\"_documentID
+	
+
+	
+	set t=##class(%Library.File).CreateDirectory(directory)
+	
+	
+	set fileStrm=##class(%FileBinaryStream).%New()
+	set fullFilePath=directory_"\"_documentID_".pdf"
+	set fileStrm.Filename=fullFilePath	
+		
+	Do base64.Rewind()
+
+	While 'base64.AtEnd {
+     set ln = base64.Read()
+    set lnDecoded = $system.Encryption.Base64Decode(ln)
+	do fileStrm.Write(lnDecoded)
+	}
+	
+
+
+	set t=fileStrm.%Save()
+	
+	
+
+	
+		
+	quit fullFilePath
+]]></Implementation>
+</Method>
+
+<Method name="ExtractText">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>filepath:%String,tikaFilepath:%String,*text:%String</FormalSpec>
+<Implementation><![CDATA[
+	
+
+	//get directory
+	set directory=##class(%File).GetDirectory(filepath)
+	//:\Users\Administrator\Kyle\tika-app-2.6.0.jar	
+	set cmd="java -jar "_tikaFilepath_" --text -i "_directory_" -o "_directory
+	set cmdStatus=$ZF(-1,cmd) //run command
+
+	
+
+	//update filename
+	set oldFilePath=filepath_".txt"
+	set newFilepath=($REPLACE(filepath,".pdf",".txt")) 
+	
+
+	
+	set sc=##class(%File).Rename(oldFilePath,newFilepath)
+	
+	
+	set fileObj=##class(%File).%New(newFilepath)
+	do fileObj.Open("RU")
+
+	set text=fileObj.Read()
+	
+	do fileObj.Rewind()
+	do fileObj.Close()
+	
+			
+	set t=##class(%File).Delete(filepath)	
+	set t=##class(%File).Delete(newFilepath)
+	
+	
+	
+	quit text
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="FLIP.Documents.Process.HistoricDataIngestion">
+<ClassType>persistent</ClassType>
+<Super>Ens.BusinessProcess</Super>
+<TimeChanged>66484,56489.3258094</TimeChanged>
+<TimeCreated>66374,56779.3087563</TimeCreated>
+
+<Property name="TempFileConverterFolder">
+<Type>%String</Type>
+<InitialExpression>"C:\Users\Administrator\Kyle"</InitialExpression>
+</Property>
+
+<Property name="TikaFilePath">
+<Type>%String</Type>
+<InitialExpression>"C:\Users\Administrator\Kyle\tika-app-2.6.0.jar"</InitialExpression>
+</Property>
+
+<Parameter name="SETTINGS">
+<Default>TempFileConverterFolder,TikaFilePath</Default>
+</Parameter>
+
+<Method name="OnRequest">
+<FormalSpec>pInput:Ens.Request,*pResponse:Ens.Response</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+
+	set t=$$$OK
+	
+	#DIM RS As EnsLib.SQL.Snapshot
+	Set RS = pInput
+	
+
+	while RS.Next()
+	{
+		set newRecords=RS.Get("numbRec_toProcess")
+	}
+		
+	set rowsToInsert=##class(Ens.Util.FunctionSet).Lookup("FLIP.Configuration","doc_historic_recordsToSend") 
+	$$$TRACE("Minimum rows required: "_rowsToInsert)
+	$$$TRACE("Records available: "_newRecords)
+	if newRecords<rowsToInsert
+	{
+		$$$TRACE("Not enough records available")
+		quit t
+			
+	}
+	
+	//grab next batch
+	
+	set docReq=##class(FLIP.Classes.RequestDocumentData).%New()
+	set qry="SELECT usdoc_rowid, pat_nhs, pat_mrn, pat_name, pat_dob, pat_sex, pat_dod, pat_nhstracest, usdoc_documentdate, usdoc_uniqueid, usdoc_typeid, usdoc_typename, usdoc_categoryid, usdoc_categoryname, usdoc_contenttype, usdoc_contentref, usdoc_fileextn "
+	set qry=qry_"FROM tflip.usdoc_metadata WHERE rec_process=FALSE AND pat_nhstracest='01' "
+	set qry=qry_"AND NOT (pat_dob='' OR pat_nhs='' OR usdoc_documentdate='' OR usdoc_uniqueid='' OR usdoc_contentref='')"
+	set qry=qry_"ORDER BY usdoc_rowid  ASC LIMIT "_rowsToInsert
+	set docReq.Query=qry
+	
+	set sc=..SendRequestSync("ExecuteQuery",docReq,.docRes)
+	IF $$$ISERR(sc) $$$ThrowStatus(sc)
+	#DIM docRes As EnsLib.SQL.Snapshot
+	
+	if docRes.RowCount>0
+	{
+		SET count=0
+		
+		while docRes.Next()
+		{
+		
+			
+			set doc=##class(FLIP.Classes.Document).%New()
+			set pat=##class(FLIP.Classes.Patient).%New()
+			set pat.nhs=docRes.Get("pat_nhs")
+	
+			set pat.sex=docRes.Get("pat_sex")
+			
+			set pat.dob=docRes.Get("pat_dob")
+			if docRes.Get("pat_dod")'="" set pat.dod=docRes.Get("pat_dod")
+			set pat.nhsTraced=docRes.Get("pat_nhstracest")
+		
+			
+			set doc.Patient=pat
+			
+			set doc.ID=docRes.Get("usdoc_uniqueid")
+			set doc.TypeID=docRes.Get("usdoc_typeid")
+			set doc.TypeName=docRes.Get("usdoc_typename")
+			set doc.CategoryID=docRes.Get("usdoc_categoryid")
+			set doc.CategoryName=docRes.Get("usdoc_categoryname")
+			set doc.ContentType=docRes.Get("usdoc_contenttype")
+			set doc.FileExt=docRes.Get("usdoc_fileextn")
+			set doc.DocumentDate=docRes.Get("usdoc_documentdate")
+			
+			//check if the document is base64 encoded or reference pointed
+			IF docRes.Get("usdoc_contenttype")="ED" //If it is a encrypted document
+			{
+				set stream=##class(%Stream.GlobalBinary).%New()
+				do stream.Write(docRes.Get("usdoc_contentref"))
+				set directory=..TempFileConverterFolder
+				$$$LOGINFO(directory)
+				set filePath=##class(FLIP.Classes.UtilityMethods).DecodeBase64(stream,directory,doc.ID)
+		
+			
+			}
+			ELSEIF docRes.Get("usdoc_contenttype")="RP" //it is a referenced pointed document
+			{
+				set filePath=docRes.Get("usdoc_contentref")
+			}
+			else
+			{
+				GOTO END
+			}	
+		
+
+			set tikaFilepath=..TikaFilePath
+			
+			set doc.TextBlock=##class(FLIP.Classes.UtilityMethods).ExtractText(filePath,tikaFilepath)
+			
+			
+			//grab first and last row id's to update table later
+			if count=0 set startID=docRes.Get("usdoc_rowid")
+			set count=count+1
+			set endID=docRes.Get("usdoc_rowid")
+			
+			
+		
+
+			set t=..SendRequestSync("FHIRProcessor",doc)
+			
+			
+
+			IF $$$ISERR(t) $$$ThrowStatus(t)
+		
+		
+			}
+		
+		IF '$$$ISERR(t)
+		{
+			//Update records as processed
+			set req=##class(FLIP.Classes.UpdateRecProcessed).%New()
+			set sqlSt="UPDATE tflip.usdoc_metadata SET rec_process='TRUE' WHERE usdoc_rowid >= "_startID_" AND usdoc_rowid <="_endID
+			set req.qry=sqlSt
+			set sc=..SendRequestSync("ExecuteQuery",req)
+			
+				
+			
+		}	
+	}		
+	
+		
+	
+END	
+	q t
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DefaultData>HistoricDataIngestionDefaultData</DefaultData>
+<Data name="HistoricDataIngestionDefaultData">
+<Subscript>"HistoricDataIngestion"</Subscript>
+<Value name="1">
+<Value>TempFileConverterFolder</Value>
+</Value>
+<Value name="2">
+<Value>TikaFilePath</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="FLIP.Documents.Process.MDMProcessor">
+<ClassType>persistent</ClassType>
+<Super>Ens.BusinessProcess</Super>
+<TimeChanged>66484,57507.3100501</TimeChanged>
+<TimeCreated>66358,51841.9136716</TimeCreated>
+
+<Property name="TempFileConverterFolder">
+<Type>%String</Type>
+<InitialExpression>"C:\Users\Administrator\Kyle"</InitialExpression>
+</Property>
+
+<Property name="TikaFilePath">
+<Type>%String</Type>
+<InitialExpression>"C:\Users\Administrator\Kyle\tika-app-2.6.0.jar"</InitialExpression>
+</Property>
+
+<Parameter name="SETTINGS">
+<Default>TempFileConverterFolder,TikaFilePath</Default>
+</Parameter>
+
+<Method name="OnRequest">
+<FormalSpec>pRequest:EnsLib.HL7.Message,*pResponse:Ens.Response</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set t=$$$OK
+	
+	set msg=pRequest
+	
+				
+		//Grab demographics from PID segment
+	//Loop through PID 3 to grab mrn and nhs
+	set mrn="" set nhs="" set dod=""
+		
+	set x=msg.FindSegmentValues("PID:3(*)")
+	for i=1:1:x
+		{
+			if msg.FindSegmentValues("PID:3("_i_").5")="NHS"
+			{
+				set nhs=msg.FindSegmentValues("PID:3("_i_").1")
+					
+			}
+			
+		}
+		
+	set sex=msg.FindSegmentValues("PID:8")
+	set dob=msg.FindSegmentValues("PID:7.1")
+	
+		
+	//IF death indicator =Y we need to grab DOD
+		
+		if msg.FindSegmentValues("PID:30")="Y"
+		{
+			set dod=msg.FindSegmentValues("PID:29")
+		}	
+	
+		
+
+	
+	set document =##class(FLIP.Classes.Document).%New()
+	
+	set patient=##class(FLIP.Classes.Patient).%New()
+	IF nhs'="" set patient.nhs=nhs
+	set patient.dob=dob
+	IF dod'="" set patient.dob=dod
+	set patient.sex=sex
+	set document.Patient=patient
+	
+	set document.ID=msg.FindSegmentValues("TXA:12")
+	set document.Status=msg.FindSegmentValues("TXA:17")
+	set document.TypeID=msg.FindSegmentValues("TXA:2.1")
+	
+	if msg.FindSegmentValues("TXA:2.2")'="" set document.TypeName=msg.FindSegmentValues("TXA:2.2")
+	
+	
+	if msg.FindSegmentValues("TXA:2.3")'="" set document.CategoryID=msg.FindSegmentValues("TXA:2.3")
+		if msg.FindSegmentValues("TXA:2.4")'="" set document.CategoryName=msg.FindSegmentValues("TXA:2.4")
+	
+	set document.DocumentDate=msg.FindSegmentValues("TXA:4.1")
+	
+	//Set document.ContentRef=msg.FindSegmentValues("TXA:16")
+	
+	
+	IF (document.ID="") || (document.DocumentDate="")  || (patient.dob="")
+	 || (patient.nhs="")
+	{
+		$$$LOGERROR("Missing values from message - Discarding")
+		quit t
+		
+	}	
+	
+	
+	//check if the document is base64 encoded or reference pointed
+	IF msg.FindSegmentValues("OBX(1):2")="ED" //If it is a encrypted document
+	{
+		
+		
+		set stream=##class(%Stream.GlobalBinary).%New()
+		do stream.Write(msg.GetValueAt("OBX(1):5(1).5"))
+		set directory=..TempFileConverterFolder
+		$$$LOGINFO(directory)
+		set filePath=##class(FLIP.Classes.UtilityMethods).DecodeBase64(stream,directory,document.ID)
+		
+			
+		
+	}
+	ELSEIF msg.FindSegmentValues("OBX(1):2")="RP" //it is a referenced pointed document
+	{
+		set filePath=msg.FindSegmentValues("OBX(1):5(1)")
+	}
+	else
+	{
+		$$$LOGERROR("Unsupported media type") 
+		quit t
+		
+	}	
+	
+	$$$LOGINFO(filePath)	
+		
+	
+	set tikaFilepath=..TikaFilePath
+			
+	set document.TextBlock=##class(FLIP.Classes.UtilityMethods).ExtractText(filePath,tikaFilepath)
+
+	set t=..SendRequestSync("FHIRProcessor",document)
+	
+
+	
+	
+	
+	
+	quit t
+]]></Implementation>
+</Method>
+
+<Method name="DecodeBase64">
+<FormalSpec>base64:%Stream.GlobalBinary,documentID:%String,*fullFilePath:%String</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	
+	set directory="C:\Users\Administrator\Kyle\"_documentID
+	
+	$$$LOGINFO(base64)
+	
+	set t=##class(%Library.File).CreateDirectory(directory)
+	$$$TRACE("Directory created "_t)
+	
+	
+	set fileStrm=##class(%FileBinaryStream).%New()
+	set fullFilePath=directory_"\"_documentID_".pdf"
+	set fileStrm.Filename=fullFilePath	
+		
+	Do base64.Rewind()
+
+	While 'base64.AtEnd {
+     set ln = base64.Read()
+    set lnDecoded = $system.Encryption.Base64Decode(ln)
+	do fileStrm.Write(lnDecoded)
+	}
+	$$$TRACE(lnDecoded)
+
+
+	set t=fileStrm.%Save()
+	
+	
+
+	
+		
+	quit fullFilePath
+]]></Implementation>
+</Method>
+
+<Method name="ExtractText">
+<FormalSpec>filepath:%String,*text:%String</FormalSpec>
+<Implementation><![CDATA[
+	
+	$$$LOGINFO("FileIN"_filepath)
+	//get directory
+	set directory=##class(%File).GetDirectory(filepath)
+		
+	set cmd="java -jar C:\Users\Administrator\Kyle\tika-app-2.6.0.jar --text -i "_directory_" -o "_directory
+	set cmdStatus=$ZF(-1,cmd) //run command
+	$$$TRACE("Running command: "_cmd)
+	$$$TRACE("CMD: "_cmdStatus)
+	set t=$SELECT(cmdStatus=0:$$$OK,1:$$$ERROR($$$GeneralError,"Unable to extract text from pdf"))
+	$$$TRACE($SYSTEM.Status.GetErrorText(t))
+	IF $$$ISERR(t) $$$ThrowStatus(t)
+	
+
+	//update filename
+	set oldFilePath=filepath_".txt"
+	set newFilepath=($REPLACE(filepath,".pdf",".txt")) 
+	
+	$$$LOGINFO("old"_oldFilePath)
+	$$$LOGINFO("new "_newFilepath)
+	
+	set sc=##class(%File).Rename(oldFilePath,newFilepath)
+	
+
+	/*set stream=##class(%Stream.FileCharacter).%New()
+	set sc=stream.LinkToFile(newFilepath)
+	
+	while 'stream.AtEnd
+	{ 
+		set text=stream.ReadLine()
+		
+	}*/
+	
+	set fileObj=##class(%File).%New(newFilepath)
+	do fileObj.Open("RU")
+	
+
+	set text=fileObj.Read()
+	
+	do fileObj.Rewind()
+	do fileObj.Close()
+	
+	
+	
+			
+	set t=##class(%File).Delete(filepath)
+	$$$TRACE("PDF file deleted: "_t)
+		
+	set t=##class(%File).Delete(newFilepath)
+	
+	$$$TRACE(" Txt File deleted: "_t)
+		
+	set t=##class(%File).RemoveDirectory(directory)
+	IF '$$$ISERR(t) $$$TRACE("Temp txt file deleted")
+	
+	quit text
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+<DefaultData>MDMProcessorDefaultData</DefaultData>
+<Data name="MDMProcessorDefaultData">
+<Subscript>"MDMProcessor"</Subscript>
+<Value name="1">
+<Value>TempFolder</Value>
+</Value>
+<Value name="2">
+<Value>TempFileConverterFolder</Value>
+</Value>
+<Value name="3">
+<Value>TikaFilePath</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="FLIP.Documents.Service.InvokeHistoricIngestion">
+<Super>Ens.BusinessService</Super>
+<TimeChanged>66364,36693.1245911</TimeChanged>
+<TimeCreated>66364,36454.9172928</TimeCreated>
+
+<Parameter name="ADAPTER">
+<Default>EnsLib.SQL.InboundAdapter</Default>
+</Parameter>
+
+<Method name="OnProcessInput">
+<FormalSpec>pInput:EnsLib.SQL.Snapshot,*pOutput:%RegisteredObject</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+
+	set t=$$$OK
+	
+	set t=..SendRequestSync("Doc_ProcessHistoricData",pInput)
+	
+	quit t
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="FLIP.Imaging.Process.HistoricDataIngestion">
+<ClassType>persistent</ClassType>
+<Super>Ens.BusinessProcess</Super>
+<TimeChanged>66443,57731.2809618</TimeChanged>
+<TimeCreated>66358,51464.5899026</TimeCreated>
+
+<Method name="OnRequest">
+<FormalSpec>pInput:EnsLib.SQL.Snapshot,*pResponse:Ens.Response</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+
+	set t=$$$OK
+	#DIM RS As EnsLib.SQL.Snapshot
+	Set RS = pInput
+	
+
+	while RS.Next()
+	{
+		set newRecords=RS.Get("numbRec_toProcess")
+	}
+		
+	set rowsToInsert=##class(Ens.Util.FunctionSet).Lookup("FLIP.Configuration","img_historic_recordsToSend")
+	$$$TRACE("Minimum rows required: "_rowsToInsert)
+	$$$TRACE("Records available: "_newRecords)
+	if newRecords<rowsToInsert
+	{
+		$$$TRACE("Not enough records available")
+		quit t
+			
+	}	
+
+		
+		
+	//Grab next batch
+	set imgReq=##class(FLIP.Classes.RequestImagingData).%New()
+	set qry="SELECT imgres_rowid, pat_nhs, pat_mrn, pat_sex, pat_name, pat_dob, pat_dod, pat_nhstracest, ires_fillerid, ires_accessionid, ires_procedurecode, ires_procedurename, ires_modality, ires_performedby, ires_bodysite, ires_laterality, ires_sopclassid, ires_seriesid, ires_instanceid,ires_dateofstudy, ires_obsdttm, ires_obsvalue "
+	set qry=qry_"FROM tflip.imaging_results WHERE rec_process='0' AND pat_nhstracest='01' "
+	set qry=qry_"AND NOT (pat_nhs='' OR ires_accessionid='' OR ires_procedurecode='' OR ires_procedurename='' OR ires_modality='' OR ires_dateofstudy='')"
+	set qry=qry_"ORDER BY imgres_rowid ASC LIMIT "_rowsToInsert
+	$$$LOGINFO(qry)
+	set imgReq.Query=qry
+
+	set sc=..SendRequestSync("ExecuteQuery",imgReq,.imgRes)
+	IF $$$ISERR(sc) $$$ThrowStatus(sc)
+	#DIM imgRes As EnsLib.SQL.GatewayResultSet
+	
+
+	if imgRes.RowCount>0
+	{
+		set count=0
+		
+		while imgRes.Next()
+		
+		{
+			set img=##class(FLIP.Classes.Images).%New()
+			set pat=##class(FLIP.Classes.Patient).%New()
+			
+
+			
+			set pat.nhs=imgRes.Get("pat_nhs")
+			set pat.sex=imgRes.Get("pat_sex")
+			set pat.dob=imgRes.Get("pat_dob")
+			IF imgRes.Get("pat_dod")'="" set pat.dod=imgRes.Get("pat_dod")
+	
+			set img.Patient=pat
+			
+			set img.observationValue=imgRes.Get("ires_obsdttm")
+			set img.fillerID=imgRes.Get("ires_fillerid")
+			set img.accessionID=imgRes.Get("ires_accessionid")
+			set img.procedureCode=imgRes.Get("ires_procedurecode")
+			set img.procedureName=imgRes.Get("ires_procedurename")
+			set img.modalityCode=imgRes.Get("ires_modality")
+			set img.laterality=imgRes.Get("ires_laterality")
+			set img.bodysiteCode=imgRes.Get("ires_bodysite")
+			set img.sopclassUID=imgRes.Get("ires_sopclassid")
+			set img.seriesUID=imgRes.Get("ires_seriesid")
+			set img.instanceUID=imgRes.Get("ires_instanceid")
+			set img.peformedBy=imgRes.Get("ires_performedby")
+
+			IF imgRes.Get("ires_obsvalue")'="" set img.observationValue=imgRes.Get("ires_obsvalue")
+			if imgRes.Get("ires_dateofstudy")'="" set img.dateOfStudy=imgRes.Get("ires_dateofstudy")_"0000"
+			if imgRes.Get("ires_obsdttm")'="" set img.obsdttm=imgRes.Get("ires_obsdttm")
+		
+			
+			if count=0 set startID=imgRes.Get("imgres_rowid")
+			set count=count+1
+			set endID=imgRes.Get("imgres_rowid")
+			
+			
+				
+			set sc=..SendRequestSync("FHIRProcessor",img,.sc)
+					
+		
+		}
+		
+		IF '$$$ISERR(sc)
+		{
+			//Update records as processed
+			set req=##class(FLIP.Classes.UpdateRecProcessed).%New()
+			set sqlSt="UPDATE tflip.imaging_results SET rec_process='TRUE' WHERE imgres_rowid >= "_startID_" AND imgres_rowid <="_endID
+			set req.qry=sqlSt
+			set sc=..SendRequestSync("ExecuteQuery",req)
+		
+			
+		}	
+		
+	}
+	else
+	{
+		$$$TRACE("Missing data in available rows")
+	
+		
+	}	
+	
+END	
+	quit t
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+</Storage>
+</Class>
+
+
+<Class name="FLIP.Imaging.Process.RealtimeDataIngestion">
+<ClassType>persistent</ClassType>
+<Super>Ens.BusinessProcess</Super>
+<TimeChanged>66434,48993.5814812</TimeChanged>
+<TimeCreated>66346,45791.9986216</TimeCreated>
+
+<Method name="OnRequest">
+<FormalSpec>msg:EnsLib.HL7.Message,*pResponse:Ens.Response</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+
+	set t=$$$OK
+
+
+	
+	//Grab demographics from PID segment
+	//Loop through PID 3 to grab mrn and nhs	
+	set mrn="" set nhs="" set dod="" set nhsTrace=""
+	
+	set x=msg.FindSegmentValues("PID:3(*)")
+	for i=1:1:x
+		{
+			if (msg.FindSegmentValues("PID:3("_i_").5")="NHS") || (msg.FindSegmentValues("PID:3("_i_").5")="NH")
+			{
+				set nhs=msg.FindSegmentValues("PID:3("_i_").1")
+					
+			}
+			
+		}
+	//Check trace status
+	
+	$$$LOGINFO(nhs)
+	
+	set nhsTrace=msg.FindSegmentValues("PID:32")
+	if (nhsTrace'="01") || (nhs="")
+	{
+		$$$TRACE("NHS NUMBER NOT TRACED - DISCARDING MESSAGE")
+		quit t
+		
+	}	
+	
+	
+	set img=##class(FLIP.Classes.Images).%New()
+	set pat=##class(FLIP.Classes.Patient).%New()
+	
+	
+		
+	set sex=msg.FindSegmentValues("PID:8")
+	set dob=msg.FindSegmentValues("PID:7.1")
+	
+	//IF death indicator =Y we need to grab DOD
+		
+		if msg.FindSegmentValues("PID:30")="Y"
+		{
+			set dod=msg.FindSegmentValues("PID:29")
+	
+		}
+		
+	if msg.FindSegmentValues("OBR:4.1")'="" 
+	{
+		set img.procedureCode= msg.FindSegmentValues("OBR:4.1")
+	}
+
+	if msg.FindSegmentValues("OBR:4.2")'="" 
+	{
+		set img.procedureName=msg.FindSegmentValues("OBR:4.2")
+	} 
+
+	SET fillerID=msg.FindSegmentValues("ORC:3.1")
+	
+	//BODY SITE and Laterality
+	set bodySiteCode="" set laterality="" set bodysiteName =""
+	
+	set bodySiteCode=msg.FindSegmentValues("OBR:15.4")
+	
+	set laterality=msg.FindSegmentValues("OBR:15.5")
+	
+	
+	if msg.FindSegmentValues("OBR:20.1")'="" 
+	{
+		set img.accessionID=msg.FindSegmentValues("OBR:20.1")
+		
+	} 
+
+	
+	if msg.FindSegmentValues("OBR:24.1")'="" 
+	{
+		set img.modalityCode=msg.FindSegmentValues("OBR:24.1")
+	}
+	
+	set obsValue=msg.FindSegmentValues("OBX:5.1")
+		
+	set obsDttm=msg.FindSegmentValues("OBX:14.1")  
+	
+	set observer=msg.FindSegmentValues("OBR:32.1")  
+	
+	if msg.FindSegmentValues("OBR:7.1")'="" 
+	{
+		set img.dateOfStudy=msg.FindSegmentValues("OBR:7.1")
+	}	
+	
+	//DICOM ID's 
+	set seriesUID="" set instanceUID="" set sopclassUID=""
+	set seriesUID=msg.FindSegmentValues("ZDI:1")	
+	set instanceUID=msg.FindSegmentValues("ZDI:2")
+	set sopclassUID=msg.FindSegmentValues("ZDI:3")		
+	if obsValue'="" set img.observationValue=obsValue
+	if obsDttm'="" set img.obsdttm=obsDttm
+	set img.fillerID=fillerID
+	if laterality'="" set img.laterality=laterality
+	if bodySiteCode'="" set img.bodysiteCode=bodySiteCode
+	if observer'="" set img.peformedBy=observer
+	if seriesUID'="" set img.seriesUID=seriesUID
+	if instanceUID'="" set img.instanceUID=instanceUID
+ 	if sopclassUID'="" set img.sopclassUID=sopclassUID
+	
+	set pat.nhs=nhs 
+	set pat.sex=sex
+	set pat.dob=dob 
+	if dod'="" set pat.dod=dod
+	
+	set img.Patient=pat
+
+
+	
+	IF (img.accessionID'="") && (img.dateOfStudy'="") && (img.modalityCode'="") && (img.procedureCode'="")
+	&& (img.procedureName'="") && (pat.dob'="") && (pat.nhs'="")
+	{
+	
+		set t=..SendRequestSync("FHIRProcessor",img)
+	}
+	else
+	{
+		$$$TRACE("Missing values from message")
+		$$$TRACE("Discarding message")
+		
+	}	
+		
+		
+	
+	
+	
+	q t
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+</Storage>
+</Class>
+
+
+<Class name="FLIP.Imaging.Service.InvokeHistoricIngestion">
+<Super>Ens.BusinessService</Super>
+<TimeChanged>66358,50031.2187812</TimeChanged>
+<TimeCreated>66358,50031.2187812</TimeCreated>
+
+<Parameter name="ADAPTER">
+<Default>EnsLib.SQL.InboundAdapter</Default>
+</Parameter>
+
+<Method name="OnProcessInput">
+<FormalSpec>pInput:EnsLib.SQL.Snapshot,*pOutput:%RegisteredObject</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set t=$$$OK
+	
+	set t=..SendRequestSync("Img_ProcessHistoricData",pInput)
+	
+	quit t
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="FLIP.Operation.ExecuteQuery">
+<Super>Ens.BusinessOperation</Super>
+<TimeChanged>66374,56865.6649041</TimeChanged>
+<TimeCreated>66343,45211.9018476</TimeCreated>
+
+<Parameter name="ADAPTER">
+<Default>EnsLib.SQL.OutboundAdapter</Default>
+</Parameter>
+
+<Property name="Adapter">
+<Type>EnsLib.SQL.OutboundAdapter</Type>
+</Property>
+
+<Parameter name="INVOCATION">
+<Default>Queue</Default>
+</Parameter>
+
+<Method name="SelectData">
+<FormalSpec>pRequest:Ens.Request,*pResponse:Ens.Response</FormalSpec>
+<Implementation><![CDATA[
+	Set sc = $$$OK
+	Try {
+		Set pResponse = ##class(EnsLib.SQL.Snapshot).%New()
+		Set SQL = pRequest.Query
+	
+		Set sc = ..Adapter.ExecuteQuery(.pResponse, SQL) 
+		
+
+	}
+	Catch Ex {
+		Set sc = Ex.AsStatus()
+	}
+	
+	quit sc
+]]></Implementation>
+</Method>
+
+<Method name="UpdateData">
+<FormalSpec>pRequest:Ens.Request,*pResponse:Ens.Response</FormalSpec>
+<Implementation><![CDATA[
+		Set sc = $$$OK
+	Try {
+		Set pResponse = ##class(EnsLib.SQL.Snapshot).%New()
+		Set SQL = pRequest.qry
+	
+		Set sc = ..Adapter.ExecuteUpdate(.pResponse, SQL) 
+		
+
+	}
+	Catch Ex {
+		Set sc = Ex.AsStatus()
+	}
+	
+	quit sc
+]]></Implementation>
+</Method>
+
+<XData name="MessageMap">
+<Data><![CDATA[
+<MapItems>
+  <MapItem MessageType="FLIP.Classes.RequestLastProcessedRowID">
+    <Method>SelectData</Method>
+  </MapItem>
+    <MapItem MessageType="FLIP.Classes.RequestImagingData">
+    <Method>SelectData</Method>
+  </MapItem>
+   <MapItem MessageType="FLIP.Classes.UpdateRecProcessed">
+    <Method>UpdateData</Method>
+  </MapItem>
+    <MapItem MessageType="FLIP.Classes.RequestDocumentData">
+    <Method>SelectData</Method>
+  </MapItem>
+</MapItems>
+]]></Data>
+</XData>
+</Class>
+
+
+<Class name="FLIP.Operation.SendToFLIP">
+<Super>Ens.BusinessOperation</Super>
+<TimeChanged>66450,35864.1034147</TimeChanged>
+<TimeCreated>66385,42249.7237591</TimeCreated>
+
+<Parameter name="ADAPTER">
+<Default>EnsLib.HTTP.OutboundAdapter</Default>
+</Parameter>
+
+<Property name="Adapter">
+<Type>EnsLib.HTTP.OutboundAdapter</Type>
+</Property>
+
+<Parameter name="INVOCATION">
+<Default>Queue</Default>
+</Parameter>
+
+<Property name="FLIPAuthorisation">
+<Type>%String</Type>
+</Property>
+
+<Parameter name="SETTINGS">
+<Default>FLIPAuthorisation</Default>
+</Parameter>
+
+<Method name="SendFHIR">
+<FormalSpec>pMsgIn:Ens.StreamContainer,*pResponse:Ens.Response</FormalSpec>
+<Implementation><![CDATA[
+	set sc=$$$OK
+	
+	set strm=pMsgIn.Stream
+	
+
+	
+	SET tHTTPReq=##class(%Net.HttpRequest).%New()	
+	
+	
+
+	DO tHTTPReq.SetHeader("FLIP_Authorization",..FLIPAuthorisation)
+	DO tHTTPReq.SetHeader("Content-Type","application/json")
+
+	SET ..Adapter.URL="http://3.8.170.25:32472/api/import"
+	
+	SET tHTTPReq.EntityBody=strm	
+	
+	
+	SET ts=..Adapter.SendFormDataArray(.tHttpResponse, "POST", tHTTPReq)
+	
+	
+	#DIM tHttpResponse As %Net.HttpResponse
+	//$$$TRACE("Status code: "_tHttpResponse.StatusCode)
+	//$$$TRACE(tHttpResponse.Data)
+
+	set pResponse=tHttpResponse.StatusCode
+	
+	$$$LOGINFO("Status code "_tHttpResponse.StatusCode)
+	$$$LOGINFO("Status Line "_tHttpResponse.StatusLine)
+	$$$LOGINFO(tHttpResponse.Data.Read())
+
+	
+	quit sc
+]]></Implementation>
+</Method>
+
+<XData name="MessageMap">
+<Data><![CDATA[
+<MapItems>
+<MapItem MessageType="Ens.StreamContainer">
+<Method>SendFHIR</Method>
+</MapItem>
+</MapItems>
+]]></Data>
+</XData>
+</Class>
+
+
+<Class name="FLIP.Process.FHIRConvertor">
+<ClassType>persistent</ClassType>
+<Super>Ens.BusinessProcess</Super>
+<TimeChanged>66484,57690.0132637</TimeChanged>
+<TimeCreated>66339,58121.8332163</TimeCreated>
+
+<Method name="OnRequest">
+<FormalSpec>pRequest:Ens.Request,*pResponse:Ens.Response</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set sc =$$$OK 
+
+	IF $CLASSNAME(pRequest)=("FLIP.Classes.Images")
+  	{
+
+	  	do ..CreateImagingBundle(pRequest,.fhir)
+	  	 	
+  	}
+  	ELSEIF $CLASSNAME(pRequest)=("FLIP.Classes.Document")
+  	{
+	  	do ..CreateDocumentBundle(pRequest,.fhir)
+	  	
+  	} ELSE
+  	{
+	  	quit sc
+  	}
+  	
+  				
+				
+	IF sc
+	{
+		
+		$$$TRACE("Sending FHIR to FLIP endpoint")
+		//$$$TRACE(fhir.JSONString)
+	
+		
+		set sc=..SendRequestSync("HTTP_SendToFlip",fhir)
+					
+	}	
+		
+			
+	quit sc
+]]></Implementation>
+</Method>
+
+<Method name="CreateImagingBundle">
+<FormalSpec>obj:FLIP.Classes.Images,*strmc:Ens.StreamContainer</FormalSpec>
+<Implementation><![CDATA[
+	
+	set bundle={}
+	set bundle.resourceType="Bundle"
+	set bundle.type="collection"
+	set bundle.entry=[]
+	
+	//IMAGING STUDY RESOURCE
+	set img={}
+	set img.resource={}
+	set img.resource.resourceType="ImagingStudy"
+	set img.resource.meta={}
+	set img.resource.meta.profile="https://aicentre.co.uk/flip/ImagingStudy"
+	
+	set img.resource.subject={}
+	set img.resource.subject.reference="Patient/"_obj.Patient.nhs
+	
+	set img.resource.status="available"
+	set img.resource.started=##class(Ens.Util.Time).ConvertDateTime(obj.dateOfStudy,"%Y%m%d%H%M","%Y-%m-%d")
+	
+	
+	set img.resource.modality={}
+	set img.resource.modality.system="urn:oid:1.2.840.10008.6.1.19"
+	set modalityCode=obj.modalityCode
+	set img.resource.modality.code=modalityCode
+	set modalityName=""
+		
+	&sql(SELECT DataValue into :modalityName FROM Ens_Util.LookupTable WHERE TableName='FLIP.Tables.Modality'
+		 AND KeyName =:modalityCode)
+	
+	if modalityName'=""  set img.resource.modality.display=modalityName
+		
+	
+	
+	set img.resource.procedureCode=[]
+	set procedureCode={}
+	set procedureCode.coding=[]
+	set coding={}
+	set coding.system="https://aicentre.co.uk/flip/PROCEDURE_CODE"
+	set coding.code=obj.procedureCode
+	set coding.display=obj.procedureName
+	do procedureCode.coding.%Push(coding)
+	do img.resource.procedureCode.%Push(procedureCode)
+	
+	//identifier
+	
+	//fillerID
+	set img.resource.identifier=[]
+	set filler={}
+	set filler.use="official"
+	set filler.type={}
+	set filler.type.coding=[]
+	set fillerCoding={}
+	set fillerCoding.system="https://aicentre.co.uk/flip/PACS-LOCAL"
+	set fillerCoding.code="FILLER"
+	
+	do filler.type.coding.%Push(fillerCoding)
+	
+	
+	set filler.value=obj.fillerID
+	
+	//accessionID
+	set acsn={}
+	set acsn.use="official"
+	set acsn.type={}
+	set acsn.type.coding=[]
+	set acsnCoding={}
+	set acsnCoding.system="https://aicentre.co.uk/flip/PACS-LOCAL"
+	set acsnCoding.code="ACSN"
+	
+	do acsn.type.coding.%Push(acsnCoding)
+	
+	set accessionID=obj.accessionID
+	
+	set acsn.value=accessionID
+	
+	
+	do img.resource.identifier.%Push(filler)
+	do img.resource.identifier.%Push(acsn)
+	
+	
+	set img.resource.series=[]
+
+	
+	set series={}
+	
+	$$$LOGINFO(obj.seriesUID)
+		$$$LOGINFO($L(obj.seriesUID))
+	
+	if (obj.seriesUID'="") && ($L(obj.seriesUID)>1)
+	{ 	
+		set seriesID=obj.seriesUID
+	
+	}
+	else
+	{
+	//grab series id from local table
+	
+		set seriesID=""
+		&sql(Select SeriesGUID into :seriesID from FLIP_Tables.ImageSeries WHERE AccessionID=:accessionID AND Modality=:modalityCode)
+	
+		IF seriesID=""
+		{
+			//create new guid
+			set seriesID=$System.Util.CreateGUID()
+		
+			//insert into local table
+			&sql(INSERT INTO FLIP_Tables.ImageSeries (Modality,AccessionID,SeriesGUID) VALUES (:modalityCode,:accessionID,:seriesID))
+		}	
+	
+	}
+	
+	
+	set series.uid=seriesID
+	
+
+	
+	IF obj.peformedBy'="" && $L(obj.peformedBy)>1
+	{
+		set series.performer={}
+		set series.performer.actor={}
+		set series.performer.actor.identifier={}
+		set series.performer.actor.identifier.system="https://aicentre.co.uk/flip/PACS-LOCAL"
+		set series.performer.actor.identifier.value=obj.peformedBy
+	}
+
+		set series.modality={}
+		set series.modality.system="urn:oid:1.2.840.10008.6.1.19"
+		set series.modality.code=obj.modalityCode
+		if modalityName'=""  set series.modality.display=modalityName
+		
+	set latDisplay="" set latCode=obj.laterality
+	
+	&sql(SELECT DataValue into:latDisplay FROM Ens_Util.LookupTable WHERE TableName='FLIP.Tables.Laterality'
+		AND  KeyName=:latCode)
+		
+	IF latDisplay'="" 
+	{
+		set series.laterality={}
+		set series.laterality.system="urn:oid:1.2.840.10008.6.1.1284"
+		set series.laterality.code=latCode
+		set series.laterality.display=latDisplay
+
+
+	}	
+	IF obj.bodysiteCode'="" 
+	{
+		set bodySiteCode=obj.bodysiteCode
+		set series.bodySite={}
+		set series.bodySite.system="https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html"
+		set series.bodySite.code=obj.bodysiteCode
+	
+
+
+	}
+	
+	if (obj.instanceUID'="") && (obj.sopclassUID'="")
+	{
+	
+		set sopclassName="" set sopUID=obj.sopclassUID
+		&sql(SELECT DataValue into :sopclassName FROM Ens_Util.LookupTable WHERE TableName= 'FLIP.Tables.SopClass'
+		 AND KeyName =:sopUID)
+		 
+		 $$$LOGINFO("sop"_sopclassName)
+		IF sopclassName'=""
+		{
+		set series.instance={}
+		set series.instance.uid=obj.instanceUID	
+		set series.instance.sopClass={}
+		set series.instance.sopClass.display=sopclassName
+		set series.instance.sopClass.system="1.2.840.10008.15.0.​3.​14"
+		set series.instance.sopClass.code=obj.sopclassUID
+		}
+		
+	
+		
+		
+	}
+	else
+	{
+		$$$TRACE("Empty or invalid values in instance uid or sopclass uid")
+		
+	}		
+	
+		do img.resource.series.%Push(series)
+	
+	
+	do bundle.entry.%Push(img)
+	
+	//PATIENT RESOURCE
+	
+	set pat={}
+	set pat.resource={}
+	set pat.resource.resourceType="Patient"
+	set pat.resource.identifier=[]
+	
+	
+	if (obj.Patient.nhs'="") 
+	{
+	
+		set identifierNHS={}
+		set identifierNHS.use="official"
+		set identifierNHS.type={}
+		set identifierNHS.type.coding=[]
+		set coding={}
+		set coding.code="NHS"
+		set identifierNHS.value=obj.Patient.nhs
+		DO identifierNHS.type.coding.%Push(coding)
+		do pat.resource.identifier.%Push(identifierNHS)
+	}
+	
+	set patSex=##class(Ens.Util.FunctionSet).Lookup("FLIP.Gender",obj.Patient.sex,"unknown",3)
+
+	set pat.resource.gender=patSex
+	
+	set pat.resource.birthDate=##class(Ens.Util.Time).ConvertDateTime(obj.Patient.dob,"%Y%m%d","%Y-%m-%d")
+	if obj.Patient.dod'="" set pat.resource.deceasedDateTime=##class(Ens.Util.Time).ConvertDateTime(obj.Patient.dod,"%Y%m%d","%Y-%m-%d")	
+	
+	/*
+	set name={} set name.use="official" set name.text="Not Disclosed" set name.family="Not Disclosed"
+	set name.given=["Not Disclosed"] set name.prefix=["Not Disclosed"]
+	set pat.resource.name=[]
+	do pat.resource.name.%Push(name)
+	
+
+	
+	
+	set address={}
+	set pat.resource.address=[]
+	set address.use="home"
+	set address.type="postal"
+	set address.postalCode=obj.Patient.postCode
+	DO pat.resource.address.%Push(address)
+	
+	//add extension for ethnic code
+	set pat.resource.extension=[]
+	set extension={}
+	set extension.url="https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-EthnicCategory-1"
+	set extension.valueCodeableConcept={}
+	set extension.valueCodeableConcept.coding=[]
+	 set coding={} 
+	set coding.system="EthnicCategory" set coding.code=##class(Ens.Util.FunctionSet).Lookup("FLIP.Ethnicity",obj.Patient.ethnicGroup,"Z") //return Z (not stated) if no mapping found
+	do extension.valueCodeableConcept.coding.%Push(coding)
+	do pat.resource.extension.%Push(extension)*/
+	
+	
+	do bundle.entry.%Push(pat)
+	
+
+
+	//OBSERVATION RESOURCE
+	
+	IF obj.observationValue'=""  && obj.obsdttm'=""
+	{
+	
+	set obs={}
+	set obs.resource={}
+	set obs.resource.resourceType="Observation"
+	set obs.resource.status="final"
+	
+	set obs.resource.code=[]
+	 set code={}
+	 set code.coding=[]
+	
+	
+	set coding={}
+	set coding.system="https://aicentre.co.uk/flip/PACS-LOCAL"
+	set coding.code=obj.procedureCode
+	set coding.display=obj.procedureName
+	do code.coding.%Push(coding)
+	do obs.resource.code.%Push(code)
+	
+	$$$LOGINFO(obj.dateOfStudy)
+	
+	set obs.resource.effectiveDateTime=##class(Ens.Util.Time).ConvertDateTime(obj.obsdttm,"%Y%m%d%H%M","%Y-%m-%d")
+	set obs.resource.valueString=obj.observationValue
+	
+	do bundle.entry.%Push(obs)
+	
+	
+
+	
+	
+	}
+	
+	
+	
+
+	
+	$$$TRACE("TEST"_bundle.%ToJSON())
+	/*set fhir=##class(FLIP.Classes.SendFHIR).%New()
+	set fhir.JSONString=bundle.%ToJSON()*/
+	
+	set strmc=##class(Ens.StreamContainer).%New()
+	set strm=##class(%Stream.GblChrCompress).%New()
+	set jsonFormatter=##class(%JSON.Formatter).%New()
+	set json= bundle.%ToJSON()
+	do jsonFormatter.FormatToStream(json,.strm)
+	
+	set strmc.Stream=strm
+]]></Implementation>
+</Method>
+
+<Method name="CreateDocumentBundle">
+<FormalSpec>obj:FLIP.Classes.Document,*strmc:Ens.StreamContainer</FormalSpec>
+<Implementation><![CDATA[
+		
+	
+	set bundle={}
+	set bundle.resourceType="Bundle"
+	set bundle.type="collection"
+	set bundle.entry=[]
+	
+	//PATIENT RESOURCE	
+	set pat={}
+	set pat.resource={}
+	set pat.resource.resourceType="Patient"
+	set pat.resource.identifier=[]
+	
+	
+	if (obj.Patient.nhs'="") 
+	{
+	
+		set identifierNHS={}
+		set identifierNHS.use="official"
+		set identifierNHS.type={}
+		set identifierNHS.type.coding=[]
+		set coding={}
+		set coding.code="NHS"
+		set identifierNHS.value=obj.Patient.nhs
+		DO identifierNHS.type.coding.%Push(coding)
+		do pat.resource.identifier.%Push(identifierNHS)
+	}
+	
+	set patSex=##class(Ens.Util.FunctionSet).Lookup("FLIP.Gender",obj.Patient.sex,"unknown",3)
+
+	set pat.resource.gender=patSex
+	
+	set pat.resource.birthDate=##class(Ens.Util.Time).ConvertDateTime(obj.Patient.dob,"%Y%m%d","%Y-%m-%d")
+	if obj.Patient.dod'="" set pat.resource.deceasedDateTime=##class(Ens.Util.Time).ConvertDateTime(obj.Patient.dod,"%Y%m%d","%Y-%m-%d")	
+	
+	
+	do bundle.entry.%Push(pat)
+	
+	//Doc Ref resource
+	
+	set doc={}
+	set doc.resource={}
+	set doc.resource.resourceType="DocumentReference"
+	set doc.resource.id=obj.ID
+	set doc.resource.status="current"
+
+	set doc.resource.docStatus="final"
+		
+	
+	set doc.resource.identifier=[]
+	
+	set identifier={}
+	set identifier.use="official"
+	set identifier.type={}
+	set identifier.type.coding=[]
+	set type={}
+	set type.code="DRN"
+	set type.system="https://aicentre.co.uk/flip/DocMan"
+	do identifier.type.coding.%Push(type)
+	set identifier.value=obj.ID
+	do doc.resource.identifier.%Push(identifier)
+	
+	
+	If (obj.TypeID'="") || (obj.TypeName'="")
+	{
+	set doc.resource.type={}
+	set doc.resource.type.coding=[]
+	set codingType={}
+	set codingType.system="https://aicentre.co.uk/flip/DocMan"
+	IF obj.TypeID'="" set codingType.code=obj.TypeID
+	IF obj.TypeName'="" set codingType.display=obj.TypeName
+	do doc.resource.type.coding.%Push(codingType)
+	}
+	
+	
+	
+	//CATEGORY
+	IF (obj.CategoryID'="") || (obj.CategoryName'="")
+	{
+	
+	set doc.resource.category={}
+	set doc.resource.category.coding=[]
+	set codingCategory={}
+	set codingCategory.system="https://aicentre.co.uk/flip/DocMan"
+	if obj.CategoryID'="" set codingCategory.code=obj.CategoryID
+	if obj.CategoryName'="" set codingCategory.display=obj.CategoryName
+	do doc.resource.category.coding.%Push(codingCategory)
+
+	}
+
+	
+	set doc.resource.subject={}
+	set doc.resource.subject.reference="Patient/"_obj.Patient.nhs
+	
+	
+	set doc.resource.date=##class(Ens.Util.Time).ConvertDateTime(obj.DocumentDate,"%Y%m%d%H%M","%Y-%m-%dT%H:%M:%S")_".000Z"
+	
+	
+
+	
+	set doc.resource.content=[]
+	set content={}
+	set content.attachment={}
+	
+
+	set b64=$system.Encryption.Base64Encode(obj.TextBlock,1)
+	
+	set content.attachment.data=b64
+	
+	
+	
+	do doc.resource.content.%Push(content)
+	
+
+	do bundle.entry.%Push(doc)
+	
+	set strmc=##class(Ens.StreamContainer).%New()
+	set strm=##class(%Stream.GblChrCompress).%New()
+	set jsonFormatter=##class(%JSON.Formatter).%New()
+	set json= bundle.%ToJSON()
+	do jsonFormatter.FormatToStream(json,.strm)
+	
+	set strmc.Stream=strm
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Storage.Persistent</Type>
+</Storage>
+</Class>
+
+
+<Class name="FLIP.Production">
+<ProcedureBlock>0</ProcedureBlock>
+<Super>Ens.Production</Super>
+<TimeChanged>66455,41079.4723169</TimeChanged>
+<TimeCreated>66450,37612.2040083</TimeCreated>
+
+<XData name="ProductionDefinition">
+<Data><![CDATA[
+<Production Name="FLIP.Production" TestingEnabled="true" LogGeneralTraceEvents="true">
+  <Description></Description>
+  <ActorPoolSize>1</ActorPoolSize>
+  <Item Name="FHIRProcessor" Category="" ClassName="FLIP.Process.FHIRConvertor" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
+  </Item>
+  <Item Name="ExecuteQuery" Category="" ClassName="FLIP.Operation.ExecuteQuery" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
+    <Setting Target="Host" Name="ArchiveIO">1</Setting>
+    <Setting Target="Adapter" Name="DSN">PG</Setting>
+  </Item>
+  <Item Name="Img_ProcessHistoricData" Category="" ClassName="FLIP.Imaging.Process.HistoricDataIngestion" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
+  </Item>
+  <Item Name="Doc_ProcessMDM" Category="" ClassName="FLIP.Documents.Process.MDMProcessor" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
+  </Item>
+  <Item Name="Img_InvokeHistoricIngestion" Category="" ClassName="FLIP.Imaging.Service.InvokeHistoricIngestion" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+    <Setting Target="Adapter" Name="CallInterval">594949449</Setting>
+    <Setting Target="Adapter" Name="DSN">PG</Setting>
+    <Setting Target="Adapter" Name="Query">select MAX(imgres_rowid) as max_rowid,Count(*) numbRec_toProcess from tflip.imaging_results
+WHERE rec_process='0' AND pat_nhstracest='01'
+AND NOT (pat_nhs='' OR ires_accessionid='' OR ires_procedurecode='' OR ires_procedurename='' OR ires_modality='' OR ires_dateofstudy='')</Setting>
+    <Setting Target="Adapter" Name="KeyFieldName"></Setting>
+  </Item>
+  <Item Name="Doc_InvokeHistoricIngestion" Category="" ClassName="FLIP.Documents.Service.InvokeHistoricIngestion" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+    <Setting Target="Adapter" Name="CallInterval">10000</Setting>
+    <Setting Target="Adapter" Name="DSN">PG</Setting>
+    <Setting Target="Adapter" Name="KeyFieldName"></Setting>
+    <Setting Target="Adapter" Name="Query">select MAX(usdoc_rowid) as max_rowid,Count(*) numbRec_toProcess from tflip.usdoc_metadata
+WHERE rec_process=false
+AND NOT (pat_dob='' OR pat_nhs='' OR usdoc_documentdate='' OR usdoc_uniqueid='' OR usdoc_contentref='')</Setting>
+  </Item>
+  <Item Name="Doc_ProcessHistoricData" Category="" ClassName="FLIP.Documents.Process.HistoricDataIngestion" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
+  </Item>
+  <Item Name="Img_ProcessORU" Category="" ClassName="FLIP.Imaging.Process.RealtimeDataIngestion" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
+  </Item>
+  <Item Name="HTTP_SendToFlip" Category="" ClassName="FLIP.Operation.SendToFLIP" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
+    <Setting Target="Adapter" Name="SSLConfig"></Setting>
+    <Setting Target="Host" Name="FLIPAuthorisation">AUTHKEY</Setting>
+  </Item>
+  <Item Name="Test_HL7In" Category="" ClassName="EnsLib.HL7.Service.HTTPService" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+    <Setting Target="Host" Name="MessageSchemaCategory">2.4FLIP</Setting>
+    <Setting Target="Host" Name="TargetConfigNames">Img_ProcessORU</Setting>
+    <Setting Target="Adapter" Name="CallInterval">500</Setting>
+  </Item>
+  <Item Name="Test_MDMIn" Category="" ClassName="EnsLib.HL7.Service.HTTPService" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+    <Setting Target="Host" Name="TargetConfigNames">Doc_ProcessMDM</Setting>
+    <Setting Target="Adapter" Name="Port">9985</Setting>
+    <Setting Target="Host" Name="MessageSchemaCategory">2.4</Setting>
+  </Item>
+</Production>
+]]></Data>
+</XData>
+</Class>
+
+
+<Document name="2.4FLIP.HL7">
+<Category name="2.4FLIP" base="2.4">
+
+<MessageType name='ORU_R01' structure='ORU_R01' returntype='base:ACK_R01' description='Unsolicited transmission of an observation message - Unsolicited transmission of an observation message'/>
+
+<MessageStructure name='ORU_R01' definition='base:MSH~{~[~base:PID~[~base:PD1~]~[~{~base:NK1~}~]~[~{~base:NTE~}~]~[~base:PV1~[~base:PV2~]~]~]~{~[~base:ORC~]~base:OBR~[~{~base:NTE~}~]~[~base:CTD~]~{~[~base:OBX~]~[~{~base:NTE~}~]~}~[~{~base:FT1~}~]~[~{~base:CTI~}~]~}~}~[~base:DSC~]~[~ZDI~]' description='Unsolicited transmission of an observation message - Unsolicited transmission of an observation message'/>
+
+<SegmentStructure name='ZDI'>
+    <SegmentSubStructure piece='1' description='DICOM Series Instance UID' datatype='base:ID' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='2' description='DICOM SOP Instance UID ' datatype='base:ID' required='O' ifrepeating='0'/>
+    <SegmentSubStructure piece='3' description='DICOM SOP Class UID' datatype='base:ID' required='O' ifrepeating='0'/>
+</SegmentStructure>
+
+</Category>
+</Document>
+
+<Document name="EnsExportNotes.EnsExportProduction_2023-01-10 16-03-20_821+0.PTD"><ProjectTextDocument name="EnsExportNotes.EnsExportProduction_2023-01-10 16-03-20_821+0" description="Export Notes for export EnsExportProduction_2023-01-10 16-03-20_821+0">
+<![CDATA[<Deployment>
+<Creation>
+<Machine>EC2AMAZ-1HICDC0</Machine>
+<Instance>IRISHEALTH</Instance>
+<Namespace>FLIP</Namespace>
+<SourceProduction>FLIP.Production</SourceProduction>
+<Username>Administrator</Username>
+<UTC>2023-01-10 16:06:01.042</UTC>
+</Creation>
+<Notes>
+</Notes>
+<Contents>
+<ExportProject>EnsExportProduction_2023-01-10 16-03-20_821+0</ExportProject>
+<Item num="1">2.4FLIP.HL7</Item>
+<Item num="2">FLIP.Classes.Document.CLS</Item>
+<Item num="3">FLIP.Classes.Images.CLS</Item>
+<Item num="4">FLIP.Classes.Patient.CLS</Item>
+<Item num="5">FLIP.Classes.UtilityMethods.CLS</Item>
+<Item num="6">FLIP.Configuration.LUT</Item>
+<Item num="7">FLIP.Documents.Process.HistoricDataIngestion.CLS</Item>
+<Item num="8">FLIP.Documents.Process.MDMProcessor.CLS</Item>
+<Item num="9">FLIP.Documents.Service.InvokeHistoricIngestion.CLS</Item>
+<Item num="10">FLIP.Imaging.Process.HistoricDataIngestion.CLS</Item>
+<Item num="11">FLIP.Imaging.Process.RealtimeDataIngestion.CLS</Item>
+<Item num="12">FLIP.Imaging.Service.InvokeHistoricIngestion.CLS</Item>
+<Item num="13">FLIP.Operation.ExecuteQuery.CLS</Item>
+<Item num="14">FLIP.Operation.SendToFLIP.CLS</Item>
+<Item num="15">FLIP.Process.FHIRConvertor.CLS</Item>
+<Item num="16">FLIP.Production.CLS</Item>
+<Item num="17">FLIP.Tables.Laterality.LUT</Item>
+<Item num="18">FLIP.Tables.Modality.LUT</Item>
+<Item num="19">FLIP.Tables.SopClass.LUT</Item>
+</Contents>
+<ProductionClassInExport>FLIP.Production</ProductionClassInExport>
+</Deployment>
+
+]]></ProjectTextDocument>
+</Document>
+
+<Document name="FLIP.Configuration.LUT">
+<lookupTable>
+<entry table="FLIP.Configuration" key="doc_historic_recordsToSend">1</entry>
+<entry table="FLIP.Configuration" key="img_historic_recordsToSend">1</entry>
+</lookupTable>
+</Document>
+
+<Document name="FLIP.Tables.Laterality.LUT">
+<lookupTable>
+<entry table="FLIP.Tables.Laterality" key="130290">Median</entry>
+<entry table="FLIP.Tables.Laterality" key="795002">Deep</entry>
+<entry table="FLIP.Tables.Laterality" key="3583002">Caudal</entry>
+<entry table="FLIP.Tables.Laterality" key="7771000">Left</entry>
+<entry table="FLIP.Tables.Laterality" key="11070000">Capsular</entry>
+<entry table="FLIP.Tables.Laterality" key="11896004">Intermediate</entry>
+<entry table="FLIP.Tables.Laterality" key="14414005">Peripheral</entry>
+<entry table="FLIP.Tables.Laterality" key="24020000">Horizontal</entry>
+<entry table="FLIP.Tables.Laterality" key="24028007">Right</entry>
+<entry table="FLIP.Tables.Laterality" key="24422004">Axial</entry>
+<entry table="FLIP.Tables.Laterality" key="26216008">Central</entry>
+<entry table="FLIP.Tables.Laterality" key="26283006">Superficial</entry>
+<entry table="FLIP.Tables.Laterality" key="30730003">Sagittal</entry>
+<entry table="FLIP.Tables.Laterality" key="32381004">Hilar</entry>
+<entry table="FLIP.Tables.Laterality" key="32400000">Preaxial</entry>
+<entry table="FLIP.Tables.Laterality" key="33096000">Vertical</entry>
+<entry table="FLIP.Tables.Laterality" key="33843005">Efferent</entry>
+<entry table="FLIP.Tables.Laterality" key="37197008">Anterolateral</entry>
+<entry table="FLIP.Tables.Laterality" key="38717003">Longitudinal</entry>
+<entry table="FLIP.Tables.Laterality" key="40415009">Proximal</entry>
+<entry table="FLIP.Tables.Laterality" key="43674008">Apical</entry>
+<entry table="FLIP.Tables.Laterality" key="46053002">Distal</entry>
+<entry table="FLIP.Tables.Laterality" key="49370004">Lateral</entry>
+<entry table="FLIP.Tables.Laterality" key="49530007">Afferent</entry>
+<entry table="FLIP.Tables.Laterality" key="51440002">Bilateral</entry>
+<entry table="FLIP.Tables.Laterality" key="57183005">Edge</entry>
+<entry table="FLIP.Tables.Laterality" key="57195005">Basal</entry>
+<entry table="FLIP.Tables.Laterality" key="60583000">Postaxial</entry>
+<entry table="FLIP.Tables.Laterality" key="61397002">Subcapsular</entry>
+<entry table="FLIP.Tables.Laterality" key="62824007">Transverse</entry>
+<entry table="FLIP.Tables.Laterality" key="66459002">Unilateral</entry>
+<entry table="FLIP.Tables.Laterality" key="66787007">Cephalic</entry>
+<entry table="FLIP.Tables.Laterality" key="68493006">Gutter</entry>
+<entry table="FLIP.Tables.Laterality" key="81654009">Coronal</entry>
+<entry table="FLIP.Tables.Laterality" key="87687004">Extra-articular</entry>
+<entry table="FLIP.Tables.Laterality" key="90069004">Posterolateral</entry>
+<entry table="FLIP.Tables.Laterality" key="112233002">Marginal</entry>
+<entry table="FLIP.Tables.Laterality" key="131183008">Intra-articular</entry>
+<entry table="FLIP.Tables.Laterality" key="255549009">Anterior</entry>
+<entry table="FLIP.Tables.Laterality" key="255551008">Posterior</entry>
+<entry table="FLIP.Tables.Laterality" key="255561001">Medial</entry>
+<entry table="FLIP.Tables.Laterality" key="260521003">Internal</entry>
+<entry table="FLIP.Tables.Laterality" key="261074009">External</entry>
+<entry table="FLIP.Tables.Laterality" key="261089000">Inferior</entry>
+<entry table="FLIP.Tables.Laterality" key="264217000">Superior</entry>
+<entry table="FLIP.Tables.Laterality" key="410679008">Surface</entry>
+</lookupTable>
+</Document>
+
+<Document name="FLIP.Tables.Modality.LUT">
+<lookupTable>
+<entry table="FLIP.Tables.Modality" key="AR">Autorefraction</entry>
+<entry table="FLIP.Tables.Modality" key="BDUS">Ultrasound Bone Densitometry</entry>
+<entry table="FLIP.Tables.Modality" key="BI">Biomagnetic Imaging</entry>
+<entry table="FLIP.Tables.Modality" key="BMD">Bone Mineral Densitometry</entry>
+<entry table="FLIP.Tables.Modality" key="CR">Computed Radiography</entry>
+<entry table="FLIP.Tables.Modality" key="CT">Computed Tomography</entry>
+<entry table="FLIP.Tables.Modality" key="DG">Diaphanography</entry>
+<entry table="FLIP.Tables.Modality" key="DMS">Dermoscopy</entry>
+<entry table="FLIP.Tables.Modality" key="DX">Digital Radiography</entry>
+<entry table="FLIP.Tables.Modality" key="ECG">Electrocardiography</entry>
+<entry table="FLIP.Tables.Modality" key="EEG">Electroencephalography</entry>
+<entry table="FLIP.Tables.Modality" key="EMG">Electromyography</entry>
+<entry table="FLIP.Tables.Modality" key="EOG">Electrooculography</entry>
+<entry table="FLIP.Tables.Modality" key="EPS">Cardiac Electrophysiology</entry>
+<entry table="FLIP.Tables.Modality" key="ES">Endoscopy</entry>
+<entry table="FLIP.Tables.Modality" key="GM">General Microscopy</entry>
+<entry table="FLIP.Tables.Modality" key="HD">Hemodynamic Waveform</entry>
+<entry table="FLIP.Tables.Modality" key="IO">Intra-oral Radiography</entry>
+<entry table="FLIP.Tables.Modality" key="IVOCT">Intravascular Optical Coherence Tomography</entry>
+<entry table="FLIP.Tables.Modality" key="IVUS">Intravascular Ultrasound</entry>
+<entry table="FLIP.Tables.Modality" key="KER">Keratometry</entry>
+<entry table="FLIP.Tables.Modality" key="LEN">Lensometry</entry>
+<entry table="FLIP.Tables.Modality" key="LS">Laser Scan</entry>
+<entry table="FLIP.Tables.Modality" key="MG">Mammography</entry>
+<entry table="FLIP.Tables.Modality" key="MR">Magnetic Resonance</entry>
+<entry table="FLIP.Tables.Modality" key="NM">Nuclear Medicine</entry>
+<entry table="FLIP.Tables.Modality" key="OAM">Ophthalmic Axial Measurements</entry>
+<entry table="FLIP.Tables.Modality" key="OCT">Optical Coherence Tomography</entry>
+<entry table="FLIP.Tables.Modality" key="OP">Ophthalmic Photography</entry>
+<entry table="FLIP.Tables.Modality" key="OPM">Ophthalmic Mapping</entry>
+<entry table="FLIP.Tables.Modality" key="OPT">Ophthalmic Tomography</entry>
+<entry table="FLIP.Tables.Modality" key="OPTBSV">Ophthalmic Tomography B-scan Volume Analysis</entry>
+<entry table="FLIP.Tables.Modality" key="OPTENF">Ophthalmic Tomography En Face</entry>
+<entry table="FLIP.Tables.Modality" key="OPV">Ophthalmic Visual Field</entry>
+<entry table="FLIP.Tables.Modality" key="OSS">Optical Surface Scanner</entry>
+<entry table="FLIP.Tables.Modality" key="POS">Position Sensor</entry>
+<entry table="FLIP.Tables.Modality" key="PT">Positron emission tomography</entry>
+<entry table="FLIP.Tables.Modality" key="PX">Panoramic X-Ray</entry>
+<entry table="FLIP.Tables.Modality" key="RESP">Respiratory Waveform</entry>
+<entry table="FLIP.Tables.Modality" key="RF">Radiofluoroscopy</entry>
+<entry table="FLIP.Tables.Modality" key="RG">Radiographic imaging</entry>
+<entry table="FLIP.Tables.Modality" key="RTIMAGE">RT Image</entry>
+<entry table="FLIP.Tables.Modality" key="SM">Slide Microscopy</entry>
+<entry table="FLIP.Tables.Modality" key="SRF">Subjective Refraction</entry>
+<entry table="FLIP.Tables.Modality" key="TG">Thermography</entry>
+<entry table="FLIP.Tables.Modality" key="US">Ultrasound</entry>
+<entry table="FLIP.Tables.Modality" key="VA">Visual Acuity</entry>
+<entry table="FLIP.Tables.Modality" key="XA">X-Ray Angiography</entry>
+<entry table="FLIP.Tables.Modality" key="XC">External-camera Photography</entry>
+</lookupTable>
+</Document>
+
+<Document name="FLIP.Tables.SopClass.LUT">
+<lookupTable>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.1">Computed Radiography Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.1.1">Digital X-Ray Image Storage - For Presentation</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.1.1.1">Digital X-Ray Image Storage - For Processing</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.1.2">Digital Mammography X-Ray Image Storage - For Presentation</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.1.2.1">Digital Mammography X-Ray Image Storage - For Processing</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.1.3">Digital Intra-Oral X-Ray Image Storage - For Presentation</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.1.3.1">Digital Intra-Oral X-Ray Image Storage - For Processing</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.104.1">Encapsulated PDF Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.104.2">Encapsulated CDA Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.11.1">Grayscale Softcopy Presentation State Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.11.2">Color Softcopy Presentation State Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.11.3">Pseudo-Color Softcopy Presentation State Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.11.4">Blending Softcopy Presentation State Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.11.5">XA/XRF Grayscale Softcopy Presentation State Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.12.1">X-Ray Angiographic Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.12.1.1">Enhanced XA Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.12.2">X-Ray Radiofluoroscopic Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.12.2.1">Enhanced XRF Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.128">Positron Emission Tomography Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.128.1">Legacy Converted Enhanced PET Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.13.1.1">X-Ray 3D Angiographic Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.13.1.2">X-Ray 3D Craniofacial Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.13.1.3">Breast Tomosynthesis Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.130">Enhanced PET Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.131">Basic Structured Display Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.14.1">Intravascular Optical Coherence Tomography Image Storage - For Presentation</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.14.2">Intravascular Optical Coherence Tomography Image Storage - For Processing</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.2">CT Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.2.1">Enhanced CT Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.2.2">Legacy Converted Enhanced CT Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.20">Nuclear Medicine Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.3.1">Ultrasound Multi-frame Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.4">MR Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.4.1">Enhanced MR Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.4.2">MR Spectroscopy Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.4.3">Enhanced MR Color Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.4.4">Legacy Converted Enhanced MR Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.481.1">RT Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.481.2">RT Dose Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.481.3">RT Structure Set Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.481.4">RT Beams Treatment Record Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.481.5">RT Plan Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.481.6">RT Brachy Treatment Record Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.481.7">RT Treatment Summary Record Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.481.8">RT Ion Plan Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.481.9">RT Ion Beams Treatment Record Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.6.1">Ultrasound Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.6.2">Enhanced US Volume Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.66">Raw Data Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.66.1">Spatial Registration Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.66.2">Spatial Fiducials Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.66.3">Deformable Spatial Registration Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.66.4">Segmentation Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.66.5">Surface Segmentation Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.67">Real World Value Mapping Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.68.1">Surface Scan Mesh Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.68.2">Surface Scan Point Cloud Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.7">Secondary Capture Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.7.1">Multi-frame Single Bit Secondary Capture Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.7.2">Multi-frame Grayscale Byte Secondary Capture Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.7.3">Multi-frame Grayscale Word Secondary Capture Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.7.4">Multi-frame True Color Secondary Capture Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.1">VL Endoscopic Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.1.1">Video Endoscopic Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.2">VL Microscopic Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.2.1">Video Microscopic Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.3">VL Slide-Coordinates Microscopic Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.4">VL Photographic Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.4.1">Video Photographic Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.5.1">Ophthalmic Photography 8 Bit Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.5.2">Ophthalmic Photography 16 Bit Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.5.3">Stereometric Relationship Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.5.4">Ophthalmic Tomography Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.77.1.6">VL Whole Slide Microscopy Image Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.78.1">Lensometry Measurements Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.78.2">Autorefraction Measurements Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.78.3">Keratometry Measurements Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.78.4">Subjective Refraction Measurements Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.78.5">Visual Acuity Measurements Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.78.6">Spectacle Prescription Report Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.78.7">Ophthalmic Axial Measurements Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.78.8">Intraocular Lens Calculations Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.79.1">Macular Grid Thickness and Volume Report</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.80.1">Ophthalmic Visual Field Static Perimetry Measurements Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.81.1">Ophthalmic Thickness Map Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.82.1">Corneal Topography Map Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.11">Basic Text SR</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.22">Enhanced SR</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.33">Comprehensive SR</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.34">Comprehensive 3D SR</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.40">Procedure Log</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.50">Mammography CAD SR</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.59">Key Object Selection</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.65">Chest CAD SR</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.67">X-Ray Radiation Dose SR</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.69">Colon CAD SR</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.88.70">Implantation Plan SR Document Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.9.1.1">12-lead ECG Waveform Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.9.1.2">General ECG Waveform Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.9.1.3">Ambulatory ECG Waveform Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.9.2.1">Hemodynamic Waveform Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.9.3.1">Cardiac Electrophysiology Waveform Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.9.4.1">Basic Voice Audio Waveform Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.9.4.2">General Audio Waveform Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.9.5.1">Arterial Pulse Waveform Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.1.1.9.6.1">Respiratory Waveform Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.34.7">RT Beams Delivery Instruction Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.43.1">Generic Implant Template Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.44.1">Implant Assembly Template Storage</entry>
+<entry table="FLIP.Tables.SopClass" key="1.2.840.10008.5.1.4.45.1">Implant Template Group Storage</entry>
+</lookupTable>
+</Document></Export>
