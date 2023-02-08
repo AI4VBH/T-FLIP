@@ -34,15 +34,6 @@ Interoperability -> Configure -> Production -> If not then the press open -> Sel
 
 # T-FLIP Interface Components
 
-T-FLIP is designed to convert four separate data streams into FHIR bundles:
-
-•	Historic document meta data loaded onto Postgres staging table
-•	Real-time document feed via HL7 messaging
-•	Historic Imaging results loaded onto Postgres staging table
-•	Real-time Imaging result feed via HL7
-
-***Interface Components***
-
 ***Doc_InvokeHistoricIngestion***
 
 This component  will query the document metadata staging table (tflip.usdoc_metadata) and select the number of rows available that have yet to be processed will then send a SQL snapshot of this number to Doc_ProcessHistoricData
