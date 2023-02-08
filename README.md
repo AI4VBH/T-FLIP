@@ -40,34 +40,43 @@ T-FLIP is designed to convert four separate data streams into FHIR bundles:
 •	Historic Imaging results loaded onto Postgres staging table
 •	Real-time Imaging result feed via HL7
 
-Interface Components
+***Interface Components***
 
-Doc_InvokeHistoricIngestion
+***Doc_InvokeHistoricIngestion
+
 This component  will query the document metadata staging table (tflip.usdoc_metadata) and select the number of rows available that have yet to be processed will then send a SQL snapshot of this number to Doc_ProcessHistoricData
 
-Img_InvokeHistoricIngestion
+***Img_InvokeHistoricIngestion
+
 This component  will query the imaging results staging table (tflip.imaging_results) and select the number of rows available that have yet to be processed
 
-Doc_ProcessHistoricData
+***Doc_ProcessHistoricData
+
 Component receives a SQL snapshot from Doc_Invoke historic ingestion with the number of rows to be processed, will check this number against a value in the lookup table “FLIP.Configuration” to check if there is an appropriate number of records to send in the batch. If not, then the process will quit.
 The process will then prepare the query and retrieve the rows from the database. For each row in the table a check is made to see if the document is base 64 encrypted, if so then the document is decrypted and saved in a temporary folder. Apache tika is then used to convert the document to a text file and the text is then extracted.  A query is then prepared to update the staging table so the records are not reprocessed
 
-Img_ProcessHistoricData
+***Img_ProcessHistoricData
+
 Component receives a SQL snapshot from Doc_Invoke historic ingestion with the number of rows to be processed, will check this number against a value in the lookup table “FLIP.Configuration” to check if there is an appropriate number of records to send in the batch. If not, then the process will quit. The process will then prepare the query and retrieve the rows from the database, a query is then prepared to update the staging table so the records are not reprocessed.
 
-Doc_ProcessMDM
+***Doc_ProcessMDM
+
 Receives a HL7 MDM message and extracts the required data. If the message contains an encrypted document then the document will be decrypted and then saved into a temporary folder. Apache tika is then used to convert the document into a text file and the text is then extracted
 
-Doc_ProcessORU
+***Doc_ProcessORU
+
 Receives HL7 ORU message and extracts the required data
 
-FHIRProcessor
+***FHIRProcessor
+
 Common Business process that will receive data from all four streams and convert into the relevant FHIR bundle. The bundle will then be placed inside a stream and passed on to the HTTPOperation
 
-ExecuteQuery
+***ExecuteQuery
+
 Common Business Operation that will be handle all the communication with the Postgres database.
 
-HTTP_SendToFlip
+***HTTP_SendToFlip
+
 Common Business Operation for sending HTTP requests to the FLIP endpoint
 
 
