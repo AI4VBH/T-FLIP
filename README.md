@@ -3,11 +3,11 @@ repository to store the T-FLIP TIE integration code
 
 # T-FLIP Implementation Guide
 
-The following production has been developed using Intersystems technology and Postgres for database management, if an alternative DBMS is to be used then the queries will have to be updated. This guide assumes the staging tables have been already created on postgres. If not, go to page 8 on the following guide: https://docs.google.com/document/d/1dzqWKm4k0zYn-9zFc2bqY-Ohqk3n1bqvXnD8PMobWKw/edit# and use the create scripts.
+The following production has been developed using Intersystems technology and Postgres for database management, if an alternative DBMS is to be used then the queries will have to be updated. This guide assumes the staging tables have been already created on postgres. If not, go to page 8 on the following guide: https://docs.google.com/document/d/1dzqWKm4k0zYn-9zFc2bqY-Ohqk3n1bqvXnD8PMobWKw/edit# and use the create scripts. It is recommended to create a new namespace to hold this production. Alternatively step 2 can be skipped.
 
 The following steps can be followed to implement T-FLIP:
 
-1. Save Production XML file 'TFLIP.Production' to trust server
+1. Save Production XML file to the trust server
 
 2. Create new namespace:
 Open Intersystems Management portal -> System Administration -> Configuration -> System Configuration -> NameSpaces -> Create new namespace -> Enter a suitable name for the namespace 'FLIP' -> Create new database -> choose suitable directory to hold the IRIS database
