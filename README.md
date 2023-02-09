@@ -65,7 +65,7 @@ Common Business process that will receive data from all four streams and convert
 
 ***ExecuteQuery***
 
-Common Business Operation that will be handle all the communication with the Postgres database.
+Common Business Operation that will be handle the communication with the Postgres database.
 
 ***HTTP_SendToFlip***
 
