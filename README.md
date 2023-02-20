@@ -7,7 +7,7 @@ The following steps can be followed to implement T-FLIP:
 1. Save Production XML file to the trust server
 
 2. Create new namespace:
-Open Intersystems Management portal -> System Administration -> Configuration -> System Configuration -> NameSpaces -> Create new namespace -> Enter a suitable name for the namespace 'FLIP' -> Create new database -> choose suitable directory to hold the IRIS database
+Open Intersystems Management portal -> System Administration -> Configuration -> System Configuration -> Namespaces -> Create new namespace -> Enter a suitable name for the namespace 'FLIP' -> Create new database -> choose suitable directory to hold the IRIS database
 
 More details can found here: https://docs.intersystems.com/iris20222/csp/docbook/Doc.View.cls?KEY=GORIENT_ch_enviro
 
